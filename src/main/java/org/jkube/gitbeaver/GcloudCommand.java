@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public class GcloudCommand extends AbstractCommand {
-    protected GcloudCommand() {
+    public GcloudCommand() {
         super(2, null, "gcloud");
     }
 
