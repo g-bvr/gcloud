@@ -17,7 +17,7 @@ public class GcloudPlugin extends SimplePlugin {
     @Override
     public List<String> getInstallationScript() {
         return Arrays.asList(
-                "apk add --no-cache --update which bash",
+                "apk add --no-cache --update which bash python3",
                 "curl -sSL -o install.sh https://sdk.cloud.google.com",
                 "bash install.sh"
         );
