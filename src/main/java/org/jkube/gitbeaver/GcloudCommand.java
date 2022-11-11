@@ -23,7 +23,7 @@ public class GcloudCommand extends AbstractCommand {
         gcloud.command(GCLOUD_BINARY, arguments);
         gcloud
                 .dir(workSpace.getWorkdir())
-                .successMarker("Cloning into ")
+                .successMarker("Created ")
                 .logConsole(GitBeaver.getApplicationLogger(variables).createSubConsole())
                 .execute();
 
