@@ -3,7 +3,6 @@ package org.jkube.gitbeaver;
 import org.jkube.gitbeaver.plugin.SimplePlugin;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class GcloudPlugin extends SimplePlugin {
