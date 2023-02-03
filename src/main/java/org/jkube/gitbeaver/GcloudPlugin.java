@@ -8,7 +8,7 @@ import java.util.List;
 public class GcloudPlugin extends SimplePlugin {
 
     public GcloudPlugin() {
-        super(
+        super("Allows execution of GCP operations using the Googlw gcloud cli",
                 GcloudCommand.class
         );
     }
