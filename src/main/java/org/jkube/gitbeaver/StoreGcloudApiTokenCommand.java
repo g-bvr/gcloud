@@ -14,7 +14,7 @@ public class StoreGcloudApiTokenCommand extends AbstractCommand {
     private static final String VARIABLE = "variable";
 
     public StoreGcloudApiTokenCommand() {
-        super("get gcloud api token");
+        super("Get a gcloud api token and store it in a variable");
         commandline("STORE GCLOUD API TOKEN IN VARIABLE "+VARIABLE);
         argument(VARIABLE, "name of the variable which is set to api access token");
     }
