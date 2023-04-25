@@ -20,7 +20,8 @@ public class GcloudPlugin extends SimplePlugin {
         return Arrays.asList(
                 "apk add --no-cache --update which bash python3",
                 "curl -sSL -o install.sh https://sdk.cloud.google.com",
-                "bash install.sh"
+                "bash install.sh",
+                "export PATH=$PATH:/root/google-cloud-sdk/bin"
         );
     }
 
