@@ -10,8 +10,9 @@ public class GcloudPlugin extends SimplePlugin {
     public GcloudPlugin() {
         super("Allows execution of GCP operations using the Googlw gcloud cli",
                 BigQueryCommand.class,
+                GcloudCommand.class,
                 StoreGcloudApiTokenCommand.class,
-                GcloudCommand.class
+                SourceRepoCloneCommand.class
         );
     }
 
