@@ -43,7 +43,7 @@ public class CloneSourceRepoCommand extends AbstractCommand {
         gcloud.command(GCLOUD_BINARY, List.of("source", "repos", "clone", project, repo));
         gcloud
                 .dir(workSpace.getWorkdir())
-                .successMarker("Created ")
+                .successMarker("Project .* repository .* was cloned to .*")
                 .logConsole(GitBeaver.getApplicationLogger(variables).createSubConsole())
                 .execute();
     }
