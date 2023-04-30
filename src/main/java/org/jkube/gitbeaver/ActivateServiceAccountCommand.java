@@ -27,7 +27,7 @@ public class ActivateServiceAccountCommand extends AbstractCommand {
         gcloud.command(GCLOUD_BINARY, List.of("auth", "activate-service-account", "--key-file", keyFile));
         gcloud
                 .dir(workSpace.getWorkdir())
-                .successMarker("Activated service account credentials for.*")
+                .successMarker("Activated service account credentials")
                 .logConsole(GitBeaver.getApplicationLogger(variables).createSubConsole())
                 .execute();
     }

@@ -44,6 +44,8 @@ public class CloneSourceRepoCommand extends AbstractCommand {
         gcloud
                 .dir(workSpace.getWorkdir())
                 .successMarker("Project .* repository .* was cloned to .*")
+                .noError("warning: remote HEAD refers to nonexistent ref, unable to checkout")
+                .noError("Cloning into")
                 .logConsole(GitBeaver.getApplicationLogger(variables).createSubConsole())
                 .execute();
     }
