@@ -19,8 +19,8 @@ public class CloneSourceRepoCommand extends AbstractCommand {
 
     public CloneSourceRepoCommand() {
         super("clone a gcloud source repo");
-        commandlineVariant("CLONE BRANCH "+BRANCH+" OF SOURCE REPO "+REPO+" IN PROJECT "+PROJECT, "clone a specific branch of a source repo");
-        commandlineVariant("CLONE SOURCE REPO "+REPO+" IN PROJECT "+PROJECT, "clone main branch of a source repo");
+        commandlineVariant("GCLOUD CLONE BRANCH "+BRANCH+" OF SOURCE REPO "+REPO+" IN PROJECT "+PROJECT, "clone a specific branch of a source repo");
+        commandlineVariant("GCLOUD CLONE SOURCE REPO "+REPO+" IN PROJECT "+PROJECT, "clone main branch of a source repo");
         argument(PROJECT, "the gcp project in which the repository is located");
         argument(REPO, "the name of the gcp source reopsitory");
         argument(BRANCH, "the branch to be checked out");
