@@ -12,7 +12,7 @@ public class GcloudPlugin extends SimplePlugin {
                 BigQueryCommand.class,
                 GcloudCommand.class,
                 StoreGcloudApiTokenCommand.class,
-                SourceRepoCloneCommand.class
+                CloneSourceRepoCommand.class
         );
     }
 

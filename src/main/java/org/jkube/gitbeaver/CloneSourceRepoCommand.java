@@ -6,20 +6,19 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 
-import static org.jkube.gitbeaver.CommandParser.REST;
 import static org.jkube.gitbeaver.GcloudCommand.GCLOUD_BINARY;
 
 
-public class SourceRepoCloneCommand extends AbstractCommand {
+public class CloneSourceRepoCommand extends AbstractCommand {
 
     private static final String PROJECT = "project";
     private static final String REPO = "repo";
     private static final String BRANCH = "branch";
     private static final String GIT_BINARY = "git";
 
-    public SourceRepoCloneCommand() {
+    public CloneSourceRepoCommand() {
         super("clone specific branch from gcloud source repo");
-        commandline("SOURCE REPO CLONE BRANCH "+BRANCH+" OF REPO "+REPO+" IN PROJECT "+PROJECT);
+        commandline("CLONE BRANCH "+BRANCH+" OF REPO "+REPO+" IN PROJECT "+PROJECT);
         argument(PROJECT, "the gcp project in which the repository is located");
         argument(REPO, "the name of the gcp source reopsitory");
         argument(BRANCH, "the branch to be checked out");
