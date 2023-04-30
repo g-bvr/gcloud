@@ -15,10 +15,12 @@ public class CloneSourceRepoCommand extends AbstractCommand {
     private static final String REPO = "repo";
     private static final String BRANCH = "branch";
     private static final String GIT_BINARY = "git";
+    private static final String DEFAULT_BRANCH = "main";
 
     public CloneSourceRepoCommand() {
-        super("clone specific branch from gcloud source repo");
-        commandline("CLONE BRANCH "+BRANCH+" OF REPO "+REPO+" IN PROJECT "+PROJECT);
+        super("clone a gcloud source repo");
+        commandlineVariant("CLONE BRANCH "+BRANCH+" OF SOURCE REPO "+REPO+" IN PROJECT "+PROJECT, "clone a specific branch of a source repo");
+        commandlineVariant("CLONE SOURCE REPO "+REPO+" IN PROJECT "+PROJECT, "clone main branch of a source repo");
         argument(PROJECT, "the gcp project in which the repository is located");
         argument(REPO, "the name of the gcp source reopsitory");
         argument(BRANCH, "the branch to be checked out");
@@ -29,6 +31,9 @@ public class CloneSourceRepoCommand extends AbstractCommand {
         String project = arguments.get(PROJECT);
         String repo = arguments.get(REPO);
         String branch = arguments.get(BRANCH);
+        if (branch == null) {
+            branch = DEFAULT_BRANCH;
+        }
         cloneRepo(variables, workSpace, project, repo);
         checkoutBranch(variables, workSpace, repo, branch);
     }
