@@ -53,7 +53,7 @@ public class CloneSourceRepoCommand extends AbstractCommand {
         gcloud.command(GIT_BINARY, List.of("checkout", "-b", branch));
         gcloud
                 .dir(workSpace.getWorkdir().resolve(Path.of(repo)))
-                .successMarker("Checked out ")
+                .successMarker("Switched to a new branch")
                 .logConsole(GitBeaver.getApplicationLogger(variables).createSubConsole())
                 .execute();
     }
