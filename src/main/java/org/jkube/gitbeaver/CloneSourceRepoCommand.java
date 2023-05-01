@@ -52,7 +52,7 @@ public class CloneSourceRepoCommand extends AbstractCommand {
 
     private void checkoutBranch(Map<String, String> variables, WorkSpace workSpace, String repo, String branch) {
         ExternalProcess gcloud = new ExternalProcess();
-        gcloud.command(GIT_BINARY, List.of("checkout", "-b", branch));
+        gcloud.command(GIT_BINARY, List.of("checkout", branch));
         gcloud
                 .dir(workSpace.getWorkdir().resolve(Path.of(repo)))
                 .successMarker("Switched to a new branch")
