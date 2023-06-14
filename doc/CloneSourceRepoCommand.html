@@ -54,18 +54,26 @@ body {
 </head>
 <body>
 
-<h1 id="myheader">GcloudPlugin</h1>
+<h1 id="myheader">CloneSourceRepoCommand</h1>
 <h2>Purpose</h2>
-Allows execution of GCP operations using the Googlw gcloud cli
-<h2>Commands</h2>
+clone a gcloud source repo
+<h2>Variants</h2>
 <table id="mytable1">
-<tr><th>Command</th><th>Description</th></tr>
-  <tr><td><a href="ActivateServiceAccountCommand.html">ActivateServiceAccountCommand</a></td><td>activate a gcloud service account</td></tr>
-  <tr><td><a href="BigQueryCommand.html">BigQueryCommand</a></td><td>execute big query command</td></tr>
-  <tr><td><a href="StoreGcloudApiTokenCommand.html">StoreGcloudApiTokenCommand</a></td><td>Get a gcloud api token and store it in a variable</td></tr>
-  <tr><td><a href="CloneSourceRepoCommand.html">CloneSourceRepoCommand</a></td><td>clone a gcloud source repo</td></tr>
-  <tr><td><a href="GcloudCommand.html">GcloudCommand</a></td><td>execute gcloud command</td></tr>
+<tr><th>Usage</th><th>Description</th></tr>
+  <tr><td>GCLOUD CLONE BRANCH branch OF SOURCE REPO repo IN PROJECT project</td><td>clone a specific branch of a source repo</td></tr>
+  <tr><td>GCLOUD CLONE SOURCE REPO repo IN PROJECT project</td><td>clone main branch of a source repo</td></tr>
 </table>
+
+<h2>Arguments</h2>
+
+<table id="mytable2">
+<tr><th>Argument</th><th>Value</th></tr>
+  <tr><td>project</td><td>the gcp project in which the repository is located</td></tr>
+  <tr><td>repo</td><td>the name of the gcp source reopsitory</td></tr>
+  <tr><td>branch</td><td>the branch to be checked out</td></tr>
+</table>
+<h2>Plugin</h2>
+This command is defined in <a href="GcloudPlugin.html">GcloudPlugin</a>
 </body>
 </html>
 
