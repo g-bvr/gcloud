@@ -40,7 +40,7 @@ public class CloneSourceRepoCommand extends AbstractCommand {
 
     private void cloneRepo(Map<String, String> variables, WorkSpace workSpace, String project, String repo) {
         ExternalProcess gcloud = new ExternalProcess();
-        gcloud.command(GCLOUD_BINARY, List.of("source", "repos", "clone", project, repo));
+        gcloud.command(GCLOUD_BINARY, List.of("source", "repos", "clone", repo, "--project="+project));
         gcloud
                 .dir(workSpace.getWorkdir())
                 .successMarker("Project .* repository .* was cloned to .*")
