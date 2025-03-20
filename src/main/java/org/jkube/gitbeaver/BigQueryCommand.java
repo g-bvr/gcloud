@@ -23,7 +23,7 @@ public class BigQueryCommand extends AbstractCommand {
 
     @Override
     public void execute(Map<String, String> variables, WorkSpace workSpace, Map<String, String> arguments) {
-        ExternalProcess gcloud = new ExternalProcess();
+        ExternalProcess gcloud = new ExternalProcess(variables);
         gcloud.command(BQ_SCRIPT, List.of(arguments.get(REST).split(" ")));
         gcloud
                 .dir(workSpace.getWorkdir())

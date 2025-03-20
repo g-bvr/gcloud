@@ -39,7 +39,7 @@ public class CloneSourceRepoCommand extends AbstractCommand {
     }
 
     private void cloneRepo(Map<String, String> variables, WorkSpace workSpace, String project, String repo) {
-        ExternalProcess gcloud = new ExternalProcess();
+        ExternalProcess gcloud = new ExternalProcess(variables);
         gcloud.command(GCLOUD_BINARY, List.of("source", "repos", "clone", repo, "--project="+project));
         gcloud
                 .dir(workSpace.getWorkdir())
@@ -51,7 +51,7 @@ public class CloneSourceRepoCommand extends AbstractCommand {
     }
 
     private void checkoutBranch(Map<String, String> variables, WorkSpace workSpace, String repo, String branch) {
-        ExternalProcess gcloud = new ExternalProcess();
+        ExternalProcess gcloud = new ExternalProcess(variables);
         gcloud.command(GIT_BINARY, List.of("checkout", branch));
         gcloud
                 .dir(workSpace.getWorkdir().resolve(Path.of(repo)))

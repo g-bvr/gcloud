@@ -21,7 +21,7 @@ public class StoreGcloudApiTokenCommand extends AbstractCommand {
 
     @Override
     public void execute(Map<String, String> variables, WorkSpace workSpace, Map<String, String> arguments) {
-        ExternalProcess gcloud = new ExternalProcess();
+        ExternalProcess gcloud = new ExternalProcess(variables);
         gcloud.command(GCLOUD_BINARY, List.of("auth", "application-default", "print-access-token"));
         List<String> output = gcloud
                 .dir(workSpace.getWorkdir())

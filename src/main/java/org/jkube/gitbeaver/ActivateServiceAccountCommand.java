@@ -2,7 +2,6 @@ package org.jkube.gitbeaver;
 
 import org.jkube.gitbeaver.util.ExternalProcess;
 
-import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 
@@ -23,7 +22,7 @@ public class ActivateServiceAccountCommand extends AbstractCommand {
     @Override
     public void execute(Map<String, String> variables, WorkSpace workSpace, Map<String, String> arguments) {
         String keyFile = KEY_PATH+arguments.get(KEY);
-        ExternalProcess gcloud = new ExternalProcess();
+        ExternalProcess gcloud = new ExternalProcess(variables);
         gcloud.command(GCLOUD_BINARY, List.of("auth", "activate-service-account", "--key-file", keyFile));
         gcloud
                 .dir(workSpace.getWorkdir())
